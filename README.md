@@ -2,5 +2,5 @@
 ------------
 ### React-native Pointlook
 ------------
-- v1.0.0 - integrated fabric digits
+- v1.0.0 - iOS fabric digits
 
