@@ -31,7 +31,7 @@ export default React.createClass({
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
           <Text onPress={this.handlePressDigitLogin} style={styles.text}>
-            <Image style={styles.image} onPress={this.handlePressDigitLogin} source={require('../../images/PL/pl-logo-wht-grn-bck1024.png')}>Seed</Image>
+            <Image style={styles.image} onPress={this.handlePressDigitLogin} source={require('../../images/PL/pl-logo-wht-grn-bck1024.png')}></Image>
           </Text>
         </View>
       </View>
@@ -54,7 +54,7 @@ const styles = {
     backgroundColor: '#5eba64',
   },
   text: {
-        color: '#5eba46',
+        color: 'white',
   },
   image: {
     backgroundColor: 'transparent',

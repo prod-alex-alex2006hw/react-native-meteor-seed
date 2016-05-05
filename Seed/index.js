@@ -81,6 +81,7 @@ export default React.createClass({
 
     let initialRoute = Router.getOnboarding()
 
+
    return (
         <ExNavigator
           initialRoute={initialRoute}
