@@ -5,8 +5,8 @@ import {Platform} from 'react-native';
 let getEnvironmentName = () => {
   // Logic for figuring out platform
 
-  // return 'dev';
-  return 'stage';
+  return 'dev';
+  // return 'stage';
   // return 'production';
 }
 

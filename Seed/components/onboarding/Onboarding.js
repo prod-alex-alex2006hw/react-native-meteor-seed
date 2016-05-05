@@ -14,7 +14,7 @@ import Router from '../../config/router';
 
 export default React.createClass({
   handlePressDigitLogin() {
-    // console.log('onboarding: handlePressDigitLogin')
+    console.log('onboarding: handlePressDigitLogin')
     this.props.navigator.push(Router.getDigitLogin(this.props))
   },
   handlePressSignUp() {
