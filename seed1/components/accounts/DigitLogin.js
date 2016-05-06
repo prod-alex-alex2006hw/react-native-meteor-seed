@@ -1,7 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
+
 'use strict';
 
 var React = require('react-native');
@@ -9,7 +6,6 @@ var DigitsManager = require("react-native").NativeModules.DigitsManager;
 
 import Accounts from '../../config/db/accounts';
 import Router from '../../config/router';
-import { parseDigit } from './digitUtil';
 
 var {
   AppRegistry,
@@ -43,9 +39,7 @@ exports = module.exports = React.createClass({
             size: 16
           }
     }
-    console.log('DigitLogin: props: ', this.props )
     return {
-      digitToken: {},
      digitLoginOptions: {
         title: "Pointlook",
           phoneNumber: "",
@@ -57,12 +51,8 @@ exports = module.exports = React.createClass({
 
   handleDigitLogin(error, response) {
     if (error) this.handleDigitCancel();
-    // console.log('handleDigitLogin: response: ', response)
-    // console.log('deviceModel: ', this.props.navigator.props.deviceInfo['model'] )
-var digitToken = parseDigit(this.props.navigator.props.deviceInfo['model'] , response)
-console.log('digitToken: ', digitToken)
-    this.setState({digitToken: digitToken})
-    this.props.navigator.push(Router.getHome(this.state.digitToken, this.props))
+    console.log('handleDigitLogin: response: ', response)
+    this.props.navigator.push(Router.getHome(this.props))
   },
 
   handleDigitCancel(error) {
@@ -84,7 +74,7 @@ console.log('digitToken: ', digitToken)
   },
 
   render() {
-    // console.log('DigitLogin: props', this.props)
+    console.log('DigitLogin: props', this.props)
     return (
       <View style={{
         flex: 1,

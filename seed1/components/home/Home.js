@@ -37,7 +37,6 @@ export default React.createClass({
     this.props.navigator.push(route.route)
   },
   getInitialState: function() {
-    console.log('Home: props: ', this.props)
     let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     let nav = this.props.navigator;
     return {

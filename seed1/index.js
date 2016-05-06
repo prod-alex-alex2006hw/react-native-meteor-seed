@@ -23,8 +23,8 @@ export default React.createClass({
 
   // Initial Value (State and Props)
   getInitialState() {
-      console.log(accessDate + ': Pointlook');
-      
+      console.log(accessDate +':Initialize: Pointlook');
+
       var deviceInfo = {
         uniqueId: DeviceInfo.getUniqueID(),
         manufacturer: DeviceInfo.getManufacturer(),
@@ -42,7 +42,6 @@ export default React.createClass({
         width: width,
         height: height,
       }
-
       // console.log(accessDate,' - PointLook DeviceInfo: ', deviceInfo);
 
     return {
@@ -72,7 +71,6 @@ export default React.createClass({
         <ExNavigator
           initialRoute={initialRoute}
           deviceInfo={this.state.deviceInfo}
-          accessDate={accessDate}
           user={this.state.user}
           sceneStyle={{
             overflow: 'visible',
