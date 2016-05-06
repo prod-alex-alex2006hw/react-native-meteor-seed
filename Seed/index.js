@@ -1,3 +1,5 @@
+'use strict';
+
 import React, {
   StyleSheet,
   View,
@@ -5,6 +7,12 @@ import React, {
   Dimensions,
   Navigator,
 } from 'react-native';
+
+import {
+  Analytics,
+  Hits as GAHits,
+  Experiment as GAExperiment
+} from 'react-native-google-analytics';
 
 import ExNavigator from '@exponent/react-native-navigator';
 import DeviceInfo from 'react-native-device-info';
@@ -15,6 +23,7 @@ import Router from './config/router';
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 var accessDate = new Moment().format();
+var ga = this.ga = null;
 
 
 export default React.createClass({
@@ -24,7 +33,16 @@ export default React.createClass({
   // Initial Value (State and Props)
   getInitialState() {
       console.log(accessDate + ': Pointlook');
-      
+
+      let clientId = DeviceInfo.getUniqueID();
+      ga = new Analytics('UA-77388706-1', clientId, 1, DeviceInfo.getUserAgent());
+      var screenView = new GAHits.ScreenView(
+        'Mobile Landing',
+        DeviceInfo.getReadableVersion(),
+        DeviceInfo.getBundleId()
+      );
+      ga.send(screenView);
+
       var deviceInfo = {
         uniqueId: DeviceInfo.getUniqueID(),
         manufacturer: DeviceInfo.getManufacturer(),
