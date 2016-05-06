@@ -14,7 +14,7 @@ import Router from './config/router';
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
-var startDate = new Moment().format();
+var accessDate = new Moment().format();
 
 
 export default React.createClass({
@@ -23,7 +23,7 @@ export default React.createClass({
 
   // Initial Value (State and Props)
   getInitialState() {
-      console.log('Initialize: Pointlook');
+      console.log(accessDate +':Initialize: Pointlook');
       // console.log("Device Unique ID: ", DeviceInfo.getUniqueID());  // e.g. FCDBD8EF-62FC-4ECB-B2F5-92C9E79AC7F9
       // // * note this is IDFV on iOS so it will change if all apps from the current apps vendor have been previously uninstalled
       // console.log("Device Manufacturer: ", DeviceInfo.getManufacturer());  // e.g. Apple
@@ -57,11 +57,11 @@ export default React.createClass({
         width: width,
         height: height,
       }
-      console.log(startDate,' - PointLook DeviceInfo: ', deviceInfo);
+      console.log(accessDate,' - PointLook DeviceInfo: ', deviceInfo);
 
     return {
       deviceInfo: deviceInfo,
-      startDate: startDate,
+      accessDate: accessDate,
       user: null,
     };
   },
