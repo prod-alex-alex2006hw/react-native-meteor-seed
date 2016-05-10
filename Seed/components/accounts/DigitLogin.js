@@ -62,7 +62,7 @@ exports = module.exports = React.createClass({
 var digitToken = parseDigit(this.props.navigator.props.deviceInfo['model'] , response)
 console.log('digitToken: ', digitToken)
     this.setState({digitToken: digitToken})
-    this.props.navigator.push(Router.getHome(this.state.digitToken, this.props))
+    this.props.navigator.push(Router.getSeeding(this.state.digitToken, this.props))
   },
 
   handleDigitCancel(error) {

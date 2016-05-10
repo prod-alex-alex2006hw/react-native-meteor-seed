@@ -27,6 +27,26 @@ let Router = {
       },
     };
   },
+  getSeeding(props) {
+    return {
+      renderScene(navigator) {
+        let Home = require('../components/home/Seeding').default
+        return <Home navigator={navigator} {...props} />
+      },
+      getTitle() {
+        return 'Seeding';
+      },
+      renderLeftButton(navigator) {
+        return (
+          <TouchableOpacity onPress={() => {
+              MenuEmitter.emit('toggleMenu');
+            }}>
+            <Text style={[styles.buttonText, styles.buttonLeft]}>Menu</Text>
+          </TouchableOpacity>
+        );
+      },
+    };
+  },
   getOnboarding() {
     return {
       getSceneClass() {

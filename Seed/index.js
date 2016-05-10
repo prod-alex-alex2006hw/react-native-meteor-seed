@@ -83,7 +83,7 @@ export default React.createClass({
   // Component Render
   render() {
 
-    let initialRoute = Router.getOnboarding()
+    let initialRoute = this.state.user ? Router.getOnboarding() : Router.getSeeding();
 
 
    return (
